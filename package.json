@@ -1,0 +1,19 @@
+{
+  "name": "llama-wgsl",
+  "version": "0.1.0",
+  "description": "LLM inference in the browser on WebGPU with hand-written WGSL kernels. Zero runtime dependencies.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Dilpreet Singh Bansi",
+  "main": "src/index.js",
+  "scripts": {
+    "serve": "node tools/serve.mjs",
+    "test": "npm run test:unit && npm run test:gpu",
+    "test:unit": "node --test tests/unit/*.test.js",
+    "test:gpu": "node tests/run-browser.mjs kernels parity",
+    "test:smollm": "node tests/run-browser.mjs smollm"
+  },
+  "devDependencies": {
+    "playwright": "1.56.0"
+  }
+}

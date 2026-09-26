@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>llama-wgsl tests: parity</title>
+<style>body{font:13px/1.5 ui-monospace,monospace;background:#0b0d12;color:#d8dee9;padding:16px}</style>
+<pre id="out"></pre>
+<script type="module">
+  import('./parity.test.js').catch((e) => {
+    document.getElementById('out').textContent += 'FAIL (page) ' + (e && e.stack || e) + '\n';
+    window.__results = [{ name: 'load parity.test.js', ok: false, error: String(e && e.stack || e) }];
+  });
+</script>
+</html>
